@@ -4,7 +4,7 @@ Content-Type: application/json
 
 ###
 
-@id = "019a6951237672f9a6805790720698f1"
+@id = "019a69d4e7397b01a44e9a65dd94fb60"
 
 # Get the balance of the account
 GET http://localhost:5000/account/{{id}}

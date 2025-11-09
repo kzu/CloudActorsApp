@@ -22,6 +22,7 @@ builder.UseOrleans(silo =>
     }
     else
     {
+        silo.UseDashboard(options => options.HostSelf = false);
         silo.UseLocalhostClustering();
         silo.AddAzureTableGrainStorageAsDefault(options => options.TableServiceClient = 
             CloudStorageAccount.DevelopmentStorageAccount.CreateTableServiceClient());
@@ -64,5 +65,7 @@ app.MapDelete("/account/{id}", async (string id, IActorBus bus) =>
     var balance = await bus.ExecuteAsync($"account/{id.Trim('"')}", new Close(CloseReason.Customer));
     return Results.Ok(balance);
 });
+
+app.Map("/orleans", x => x.UseOrleansDashboard());
 
 app.Run();
