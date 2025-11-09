@@ -13,7 +13,7 @@ builder.UseOrleans(silo =>
         silo.UseAzureStorageClustering(options => options.TableServiceClient = new TableServiceClient(
                 builder.Configuration["App:Storage"] ??
                 builder.Configuration["AzureWebJobsStorage"] ??
-                throw new InvalidOperationException("Missing either App:Storage or AzureWebJobsStorage connection strings."))); ;
+                throw new InvalidOperationException("Missing either App:Storage or AzureWebJobsStorage connection strings.")));
 
         silo.AddAzureTableGrainStorageAsDefault(options => options.TableServiceClient = new TableServiceClient(
             builder.Configuration["App:Storage"] ??
