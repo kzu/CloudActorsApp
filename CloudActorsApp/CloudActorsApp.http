@@ -1,0 +1,35 @@
+# Create a new account
+POST http://localhost:5000/account
+Content-Type: application/json
+
+###
+
+@id = "019a6951237672f9a6805790720698f1"
+
+# Get the balance of the account
+GET http://localhost:5000/account/{{id}}
+Content-Type: application/json
+
+###
+
+# Deposit money (positive amount)
+POST http://localhost:5000/account/{{id}}
+Content-Type: application/json
+
+100
+
+###
+
+# Withdraw money (negative amount)
+POST http://localhost:5000/account/{{id}}
+Content-Type: application/json
+
+-50
+
+###
+
+# Close the account
+DELETE http://localhost:5000/account/{{id}}
+Content-Type: application/json
+
+###

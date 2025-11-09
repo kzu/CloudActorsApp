@@ -1,0 +1,6 @@
+<Project>
+	<PropertyGroup>
+		<RestoreSources>https://api.nuget.org/v3/index.json;C:\Code\CloudActors\bin;https://pkg.kzu.app/index.json</RestoreSources>
+		<CloudActorsVersion>0.5.0-rc</CloudActorsVersion>
+	</PropertyGroup>
+</Project>
